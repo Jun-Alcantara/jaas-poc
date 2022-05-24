@@ -5,5 +5,5 @@ use App\Http\Controllers\JitsiAuthController;
 
 Route::group(['prefix' => 'jitsi'], function () {
     Route::get('/authenticate', [JitsiAuthController::class, 'authenticationForm']);
-    Route::post('/authenticate', [JitsiAuthController::class, 'authenticate']);
+    Route::post('/authenticate', [JitsiAuthController::class, 'authenticate'])->name('jitsi.authenticate');
 });

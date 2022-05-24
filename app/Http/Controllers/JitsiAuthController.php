@@ -20,7 +20,7 @@ class JitsiAuthController extends Controller
 
     public function authenticationForm()
     {
-        return "Form";
+        return view('jitsi.lobby');
     }
 
     /**
@@ -46,9 +46,9 @@ class JitsiAuthController extends Controller
             'context' => [
                 'user' => [
                     'moderator' => false,
-                    'email' => 'junalcantara.dev@gmail.com',
-                    'name' => 'Generated From Controller',
-                    'avatar' => '',
+                    'email' => $request->email,
+                    'name' => $request->name,
+                    'avatar' => $request->avatar,
                     'id' => 'user-001'
                 ],
                 'features' => [
